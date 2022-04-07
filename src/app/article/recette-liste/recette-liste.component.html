@@ -1,0 +1,9 @@
+<div class="surface-ground px-4 py-8 md:px-8 lg:px-8">
+  <div class="grid">
+    <recette
+      class="col-12 lg:col-3"
+      *ngFor="let item of recettes"
+      [recette]="item"
+    ></recette>
+  </div>
+</div>
