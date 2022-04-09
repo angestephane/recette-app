@@ -11,10 +11,10 @@ export class RecetteListeComponent implements OnInit {
   constructor() {
     this.recettes = [
       new Recette(
-        'omelette',
+        'Riz au poulet',
         'repas simple et facile à cuisiner',
-        'faible',
-        '10 minutes',
+        'difficile',
+        '1 heure',
         ['oignon', 'sel', 'bouillon', 'huile', 'poivre', 'piment']
       ),
       new Recette(
@@ -25,13 +25,17 @@ export class RecetteListeComponent implements OnInit {
         ['oignon', 'sel', 'bouillon', 'huile', 'poivre', 'piment']
       ),
       new Recette(
-        'omelette',
+        'Ragout au petit poids',
         'repas simple et facile à cuisiner',
-        'faible',
-        '10 minutes',
+        'moyen',
+        '45 minutes',
         ['oignon', 'sel', 'bouillon', 'huile', 'poivre', 'piment']
       ),
     ];
+  }
+
+  RecetteWasSelected(recette: Recette): void {
+    console.log('Recette selectionnée est : ', recette);
   }
 
   ngOnInit(): void {}

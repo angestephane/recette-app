@@ -1,5 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-.green-chips {
+.faible {
   background-color: #6ebf8b !important;
+  color: #151d3b;
+}
+.difficile {
+  background-color: #fd5d5d !important;
+  color: #151d3b;
+}
+.moyen {
+  background-color: #f1e1a6 !important;
   color: #151d3b;
 }

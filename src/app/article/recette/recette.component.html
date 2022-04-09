@@ -13,9 +13,9 @@
       </div>
       <div>
         <p-chip
-          label="{{ recette.difficulte }}"
+          label="{{ recette.level }}"
           icon="pi pi-check"
-          styleClass="green-chips"
+          styleClass="{{ recette.level }}"
         ></p-chip>
       </div>
     </div>
@@ -34,8 +34,9 @@
     <button
       pButton
       pRipple
-      label="Voir la recette"
+      label="voir la recette"
       class="p-3 w-full mt-auto"
+      (click)="getProductSelected(recette)"
     ></button>
   </div>
 </div>

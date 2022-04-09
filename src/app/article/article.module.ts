@@ -4,7 +4,7 @@ import { RecetteComponent } from './recette/recette.component';
 import { RecetteListeComponent } from './recette-liste/recette-liste.component';
 
 //PrimeNg modules
-//Primeng import modules
+//PrimeNg import modules
 import { ButtonModule } from 'primeng/button';
 import { ChipModule } from 'primeng/chip';
 
