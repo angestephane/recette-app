@@ -8,11 +8,14 @@ import { Recette } from '../../recette.module';
 })
 export class RecetteComponent implements OnInit {
   @Input() recette: Recette = new Recette('', '', '', '', []);
-  //@Output() onRecetteElected: EventEmitter<Recette>;
-  constructor() {}
 
-  getProductSelected(recette: Recette) {
-    console.log('Recette selectionnée', recette);
+  @Output() onRecetteSelected: EventEmitter<Recette>;
+  constructor() {
+    this.onRecetteSelected = new EventEmitter();
+  }
+
+  RecetteWasSelected(recette: Recette): void {
+    this.onRecetteSelected.emit(recette);
   }
 
   ngOnInit(): void {}

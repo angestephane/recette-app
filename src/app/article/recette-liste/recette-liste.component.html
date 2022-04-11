@@ -4,6 +4,7 @@
       class="col-12 lg:col-3"
       *ngFor="let item of recettes"
       [recette]="item"
+      (onRecetteSelected)="getRecetteSelected($event)"
     ></recette>
   </div>
 </div>

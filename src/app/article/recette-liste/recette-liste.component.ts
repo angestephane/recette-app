@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Recette } from 'src/app/recette.module';
 
 @Component({
@@ -8,6 +8,7 @@ import { Recette } from 'src/app/recette.module';
 })
 export class RecetteListeComponent implements OnInit {
   recettes: Array<Recette>;
+
   constructor() {
     this.recettes = [
       new Recette(
@@ -34,7 +35,7 @@ export class RecetteListeComponent implements OnInit {
     ];
   }
 
-  RecetteWasSelected(recette: Recette): void {
+  getRecetteSelected(recette: Recette): void {
     console.log('Recette selectionnée est : ', recette);
   }
 
