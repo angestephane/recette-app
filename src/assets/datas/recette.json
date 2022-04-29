@@ -1,0 +1,32 @@
+[
+  {
+    "reference": 1,
+    "description": "repas simple et facile à cuisiner",
+    "designation": "Riz au poulet",
+    "ingredient": [
+      "oignon",
+      "sel",
+      "bouillon",
+      "huile",
+      "poivre",
+      "piment"
+    ],
+    "level": "difficile",
+    "tempsCuisson": "1"
+  },
+  {
+    "reference": 2,
+    "description": "repas simple et facile à cuisiner",
+    "designator": "Ragout au petit poids",
+    "ingredient": [
+      "oignon",
+      "sel",
+      "bouillon",
+      "huile",
+      "poivre",
+      "piment"
+    ],
+    "level": "moyen",
+    "tempsCuisson": 45
+  }
+]
