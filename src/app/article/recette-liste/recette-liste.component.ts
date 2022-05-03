@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Recette } from 'src/app/recette.module';
+import {RecetteModel} from 'src/app/models/recette.models';
+import { RecetteService } from 'src/app/shared/services/recette.service';
 
 @Component({
   selector: 'recette-liste',
@@ -7,37 +8,20 @@ import { Recette } from 'src/app/recette.module';
   styleUrls: ['./recette-liste.component.css'],
 })
 export class RecetteListeComponent implements OnInit {
-  recettes: Array<Recette>;
+  recettes: Array<RecetteModel> = [];
 
-  constructor() {
-    this.recettes = [
-      new Recette(
-        'Riz au poulet',
-        'repas simple et facile à cuisiner',
-        'difficile',
-        '1 heure',
-        ['oignon', 'sel', 'bouillon', 'huile', 'poivre', 'piment']
-      ),
-      new Recette(
-        'omelette',
-        'repas simple et facile à cuisiner',
-        'faible',
-        '10 minutes',
-        ['oignon', 'sel', 'bouillon', 'huile', 'poivre', 'piment']
-      ),
-      new Recette(
-        'Ragout au petit poids',
-        'repas simple et facile à cuisiner',
-        'moyen',
-        '45 minutes',
-        ['oignon', 'sel', 'bouillon', 'huile', 'poivre', 'piment']
-      ),
-    ];
+  constructor(private serviceRecette : RecetteService) {}
+
+  ngOnInit () : void{
+    this.serviceRecette.getData().subscribe({
+      next : (recette) => (
+        this.recettes = recette, console.log(this.recettes)),
+      error : (err) => (console.log("erreur de chargement des données"))
+    })
   }
 
-  getRecetteSelected(recette: Recette): void {
+  getRecetteSelected(recette: RecetteModel): void {
     console.log('Recette selectionnée est : ', recette);
   }
 
-  ngOnInit(): void {}
 }

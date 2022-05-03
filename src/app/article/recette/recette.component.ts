@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { Recette } from '../../recette.module';
+import { RecetteModel } from 'src/app/models/recette.models';
 
 @Component({
   selector: 'recette',
@@ -7,14 +7,14 @@ import { Recette } from '../../recette.module';
   styleUrls: ['./recette.component.css'],
 })
 export class RecetteComponent implements OnInit {
-  @Input() recette: Recette = new Recette('', '', '', '', []);
+  @Input() recette  : RecetteModel = new RecetteModel(0, '', '', [], '', 0)
 
-  @Output() onRecetteSelected: EventEmitter<Recette>;
+  @Output() onRecetteSelected: EventEmitter<RecetteModel>;
   constructor() {
     this.onRecetteSelected = new EventEmitter();
   }
 
-  RecetteWasSelected(recette: Recette): void {
+  RecetteWasSelected(recette: RecetteModel): void {
     this.onRecetteSelected.emit(recette);
   }
 
